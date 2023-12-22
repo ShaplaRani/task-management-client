@@ -6,6 +6,7 @@ import { useDrag, useDrop } from "react-dnd";
 import Swal from "sweetalert2";
 
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 
@@ -90,7 +91,7 @@ const Section = ({status,tasks,setTasks,todos,inprogress,complete}) => {
           })
         //   local all data reset
        // localStorage.setItem("tasks", JSON.stringify(mTasks));
-        axios.post('http://localhost:5000/all-task',mTasks)
+        axios.post('https://task-management-server-roan-psi.vercel.app/all-task',mTasks)
         .then(data => {
             console.log(data.data);
         })
@@ -151,7 +152,7 @@ const Task = ({task, tasks, setTasks}) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                   axios.delete(`http://localhost:5000/task/${id}`)
+                   axios.delete(`https://task-management-server-roan-psi.vercel.app/task/${id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
                             // refetch();
@@ -160,16 +161,18 @@ const Task = ({task, tasks, setTasks}) => {
                                 text: "Your file has been deleted.",
                                 icon: "success"
                             });
+                         setTasks(fTasks)
                         }
                     })
             }
         });
 
 
-           setTasks(fTasks)
-           toast("Task Remove")
+           
+          // toast("Task Remove")
     }
     //task design
+    console.log("task", task);
    return(
     <div ref={drag} className={`${isDragging?"opacity-25":"opacity-100"} relative bg-white mx-4 p-4 mt-8 shadow-md rounded-md cursor-grab`}>
          <button className="btn bg-emerald-600 text-white">{task?.priority} Priority </button>
@@ -186,7 +189,8 @@ const Task = ({task, tasks, setTasks}) => {
         <div className="flex gap-3 justify-between items-center">
           <img className="w-10 " src={task.photo} alt="" />  
         <div>
-        <button className=" text-2xl  text-orange-400"><FaRegEdit /></button>
+            {/* to={`/surveyDetails/${_id}`} */}
+        <Link to ={`/dashboard/update/${task?._id}`}><button className=" text-2xl  text-orange-400"><FaRegEdit /></button></Link>
         {/* task?.id  */}
         <button className=" text-2xl ml-2  text-red-500" onClick={() => handleRemove(task?._id)}><CiCircleMinus/></button>
         </div>

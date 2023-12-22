@@ -10,6 +10,7 @@ import CreateTask from "../pages/Dashboard/CreateTask/CreateTask";
 import Task from "../pages/Dashboard/Task/Task";
 import Contact from "../pages/Contact/Contact";
 import Testimonial from "../pages/Home/Testimonial/Testimonial";
+import Update from "../pages/Dashboard/Update/Update";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +51,11 @@ const router = createBrowserRouter([
             {
                 path:'task',
                 element:<Task></Task>
+            },
+            {
+                path:"update/:id",
+                element:<Update></Update>,
+                loader:({params}) => fetch(`https://task-management-server-roan-psi.vercel.app/task/${params.id}`)
             }
         ]
     }
