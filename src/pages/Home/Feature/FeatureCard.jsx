@@ -4,7 +4,9 @@ const FeatureCard = ({feature}) => {
      const {description, icon} = feature;
     return (
         <div>
-            <div className="card card-compact  bg-base-100 shadow-xl">
+            <div className="card card-compact  bg-base-100 shadow-xl"  data-aos="zoom-in"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
     <figure><img className='h-80 w-full' src={icon} alt="Shoes" /></figure>
      <div className="card-body">
       <h2 className="card-title text-2xl">{feature.feature}</h2>

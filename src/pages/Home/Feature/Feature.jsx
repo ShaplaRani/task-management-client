@@ -17,11 +17,13 @@ const Feature = () => {
     return (
         <div className="container mx-auto">
               
-              <div className="md:max-w-sm mx-auto text-center my-10">
+              <div className="md:max-w-sm mx-auto text-center my-10" data-aos="fade-up"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
            
             <h3 className="text-3xl text-orange-600 font-normal mx-2  border-b-2 py-4 uppercase">Key Features</h3>
         </div>
-            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 ">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 px-3 ">
                 {
                     features.map(feature => <FeatureCard key={feature._id} feature={feature}></FeatureCard>)
                 }

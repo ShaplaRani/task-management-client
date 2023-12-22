@@ -12,7 +12,9 @@ const Testimonial = () => {
     }, [])
     console.log(reviews);
     return (
-        <div className="my-20 container mx-auto">
+        <div className="my-20 container mx-auto " data-aos="fade-up"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000">
              <div className="md:max-w-sm mx-auto text-center my-10">
            
             <h3 className="text-3xl text-orange-600 font-normal mx-2  border-b-2 py-4 uppercase">Testimonials</h3>
@@ -21,7 +23,7 @@ const Testimonial = () => {
 
         {
                     reviews.map(review => <SwiperSlide key={review._id}>
-                        <div className="lg:mx-24 my-16 gap-4 flex flex-col items-center justify-center text-center">
+                        <div className="lg:mx-24 my-16 mx-3 gap-4 flex flex-col items-center justify-center text-center">
                             
                             <p className=" w-3/5 text-xl font-semibold">{review.testimonial}</p>
                             <div className="flex items-center gap-5 mt-7">
