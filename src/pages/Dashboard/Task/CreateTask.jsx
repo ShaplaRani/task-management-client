@@ -58,7 +58,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { v4 as uuidv4 } from 'uuid';
 
-const CreateTask = ({tasks, setTasks}) => {
+const CreateTask = ({ setTasks}) => {
     const [task, setTask] = useState({
         id:'',
         name:"",

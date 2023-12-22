@@ -11,14 +11,14 @@
 // export default CardItem;
 
 
-// import Image from "next/dist/client/image";
-// import {
-//   ChevronDownIcon,
-//   PlusIcon,
-//   DotsVerticalIcon,
-//   ChatAlt2Icon,
-//   PaperClipIcon,
-// } from "@heroicons/react/outline";
+import Image from "next/dist/client/image";
+import {
+  
+  PlusIcon,
+
+  ChatAlt2Icon,
+  PaperClipIcon,
+} from "@heroicons/react/outline";
 import { Draggable } from "react-beautiful-dnd";
 
 function CardItem({ data, index }) {

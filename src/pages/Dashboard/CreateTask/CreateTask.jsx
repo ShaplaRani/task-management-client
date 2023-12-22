@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 
 const CreateTask = () => {
     const { user } = useAuth()
+    console.log(user);
     const axiosPublic = useAxiosPublic();
     const {
         register,
@@ -16,8 +17,16 @@ const CreateTask = () => {
     } = useForm();
 
    const  onSubmit = async(data) => {
-      
-       const taskInfo = data;
+      console.log(data);
+       const taskInfo = {
+        email:data?.email,
+        title:data?.title,
+        priority:data?.priority,
+        description:data?.description,
+        deadline:data?.deadline,
+        status:"todo",
+        photo:user.photoURL,
+    };
        console.log(taskInfo);
     //    fetch('http://localhost:5000/create-task', {
     //     method: 'POST',
@@ -71,17 +80,17 @@ const CreateTask = () => {
   
 
     return (
-        <div className="overflow-x-hidden">
+        <div className="overflow-x-hidden bg-blue-100 pb-20">
 
             <Helmet>
                 <title>Dashboard | create task</title>
             </Helmet>
             <div className="text-center mb-7 mt-10 ">
-                <p className="text-3xl font-bold flex justify-center mb-3"><MdOutlineAddTask /></p>
-                <h2 className="text-3xl font-bold">Create Survey</h2>
+                <p className="text-3xl font-bold text-orange-600 flex justify-center mb-3"><MdOutlineAddTask /></p>
+                <h2 className="text-3xl text-orange-500 font-semibold">Create Task</h2>
             </div>
 
-            <div className="bg-blue-200 py-14 rounded-lg px-10">
+            <div className="bg-gray-100 m-10 py-14 rounded-lg px-10">
                 <form onSubmit={handleSubmit(onSubmit)} className="card-body  max-auto   space-y-6">
 
                     <div className="md:flex gap-4">

@@ -8,6 +8,8 @@ import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../layout/Dashboard";
 import CreateTask from "../pages/Dashboard/CreateTask/CreateTask";
 import Task from "../pages/Dashboard/Task/Task";
+import Contact from "../pages/Contact/Contact";
+import Testimonial from "../pages/Home/Testimonial/Testimonial";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +28,14 @@ const router = createBrowserRouter([
             {
                 path:'register',
                 element:<SignUp></SignUp>
+            },
+            {
+                path:'testimonial',
+                element:<Testimonial></Testimonial>
+            },
+            {
+                path:'contact',
+                element:<Contact></Contact>
             }
         ]
     },

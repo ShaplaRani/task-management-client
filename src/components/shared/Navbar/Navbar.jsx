@@ -63,20 +63,28 @@ const Navbar = () => {
 
 
    <NavLink
-       to="/pricing"
+       to="/testimonial"
        className={({ isActive, isPending }) =>
            isPending ? "pending" : isActive ? "text-emerald-400 underline" : ""
        }
    >
-       <li className="text-lg md:text-xl font-semibold">Pricing</li>
+       <li className="text-lg md:text-xl font-semibold">Testimonial</li>
 
    </NavLink>
    <NavLink
-       to="/allSurveys"
+       to="/contact"
        className={({ isActive, isPending }) =>
            isPending ? "pending" : isActive ? "text-emerald-400 underline" : ""
        }
-   >   <li className="text-lg md:text-xl font-semibold">Surveys</li>
+   >   <li className="text-lg md:text-xl font-semibold">Contact</li>
+
+   </NavLink>
+   <NavLink
+       to="/register"
+       className={({ isActive, isPending }) =>
+           isPending ? "pending" : isActive ? "text-emerald-400 underline" : ""
+       }
+   >   <li className="text-lg md:text-xl font-semibold">Register</li>
 
    </NavLink>
     
